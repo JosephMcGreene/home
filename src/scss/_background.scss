@@ -1,0 +1,62 @@
+@use './abstracts/index' as *;
+
+.hexagons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -100;
+
+  li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    animation: animate 25s linear infinite;
+    top: -15px;
+    opacity: .4;
+
+    &:nth-child(1) {
+      @include standard-hex();
+      left: 1%;
+      animation-delay: 0s;
+      animation-duration: 24s;
+    }
+    &:nth-child(2) {
+      @include standard-hex();
+      left: 35%;
+      animation-delay: 1.5s;
+      animation-duration: 15s;
+    }
+    &:nth-child(3) {
+      @include standard-hex();
+      left: 55%;
+      animation-delay: 4.5s;
+      animation-duration: 22s;
+    }
+    &:nth-child(4) {
+      @include standard-hex();
+      left: 80%;
+      animation-delay: 3s;
+      animation-duration: 18s;
+    }
+
+    // Hexes that come in later, for a "second wave" of rain.
+    &:nth-child(13) {
+      @include standard-hex();
+      left: 30%;
+      animation-delay: 8s;
+      animation-duration: 25s;
+    }
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(1000px) rotate(720deg);
+  }
+}

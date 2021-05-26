@@ -1,0 +1,82 @@
+@use './abstracts/index' as *;
+
+// .navbar {
+//   background: $red; // Instead of using *.$red;
+//   font-size: $font-size; // Instead of using *.$font-size;
+// }
+
+.navbar {
+  position: fixed;
+  background-color: $primary-bg;
+  top: 0;
+  width: 100vw;
+  height: 5rem;
+  z-index: 1000;
+  // ========================
+  // opacity: 0;
+  // ========================
+
+  transition: height 200ms ease;
+
+  &:hover {
+    height: 8.1rem;
+
+    .link-text {
+      display: block;
+    }
+  }
+
+  .navbar-nav {
+    @include flex(row);
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+
+.nav-item {
+  width: 100%;
+
+  a {
+    &:hover {
+      height: 8.1rem;
+    }
+  }
+}
+
+.nav-link {
+  padding: 1.5rem 0;
+  color: $text-color;
+  text-decoration: none;
+  transition: height $transition-speed ease; /* See "Hover Pseudo Classes" Section */
+
+  @include flex(column);
+  align-items: center;
+
+  svg {
+    width: 2.25rem;
+  }
+
+  &:hover {
+    background-color: $secondary-bg;
+
+    .link-text,
+    svg {
+      color: $text-hover;
+    }
+  }
+}
+
+.link-text {
+  margin-top: 1.1rem;
+  display: none;
+  font-size: 1.5rem;
+  font-family: $header-font;
+}
+
+svg {
+  transition-duration: $transition-speed;
+}

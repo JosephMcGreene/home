@@ -1,0 +1,365 @@
+/* 
+  =============== Table of Contents ===============
+
+  1. :root, Variable Declarations, General Styles
+  2. Navbar Styling
+    2a. Navbar Hover Pseudo Classes, all screens
+  3. Canvas Styles
+  4. Hex Code
+  5. MediaElement Audio Player Styles
+  6. Media Queries (inc. Hover Pseudo Classes for speciic screen sizes)
+*/
+
+
+/* =============== 1. :root, Variable Declarations, General Styles =============== */
+
+/* https://www.fontsquirrel.com/fonts/Juice?filter%5Bclassifications%5D%5B0%5D=display&filter%5Bdownload%5D=local&filter%5Blicense%5D%5B0%5D=web&filter%5Btags%5D%5B0%5D=contemporary */
+@font-face {
+  font-family: 'juice_regularregular';
+  src: url('./fonts/JUICE_Regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'juice_boldbold';
+  src: url('./fonts/JUICE_Bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'juice_bold_italicregular';
+  src: url('./fonts/JUICE_Bold_Italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* https://www.fontsquirrel.com/fonts/abel?q%5Bterm%5D=abel&q%5Bsearch_check%5D=Y */
+@font-face {
+  font-family: 'abelregular';
+  src: url('./fonts/abel-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 16px;
+
+  --text-color: rgb(245, 239, 226); /* originally: #ececec */
+  --text-hover: aqua;
+  --bg-primary: #1a1a27; /* originally: #23232e */
+  --bg-secondary: black; /* originally: #141418 */
+  --bg-body-light: rgb(35,35,45);
+  --transition-speed: 400ms;
+  --font-main: 'juice_boldbold';
+  --font-secondary: 'abelregular';
+}
+
+body {
+  background: var(--bg-primary);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: var(--font-main);
+}
+  body::-webkit-scrollbar {
+    width: 1rem;
+  }
+  body::-webkit-scrollbar-track {
+    background: var(--bg-body-light);
+  }
+  body::-webkit-scrollbar-thumb {
+    background: var(--bg-secondary);
+  }
+
+header {
+  /* margin-top: 7rem; */
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--text-color);
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h2,
+h3 {
+  color: var(--text-color);
+  display: block;
+  text-align: center;
+}
+
+main {
+  color: var(--text-color);
+}
+
+.fig-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+hr {
+  max-width: 35vw;
+  margin: 2rem auto;
+}
+
+figure {
+  z-index: 0;
+  display: inline-block;
+  max-width: 475px;
+  background-color: rgba(0,0,0,0.25);
+  margin: 10px auto;
+  padding: 25px;
+  clip-path: polygon(10% 0, 90% 0, 100% 25%, 100% 75%, 90% 100%, 10% 100%, 0 75%, 0 25%);
+}
+  figcaption {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    display: block;
+    text-align: center;
+  }
+  figure audio {
+    display: block;
+    margin: 0 auto;
+  }
+
+article,
+figure {
+  margin: 5px 1vw;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+}
+
+p {
+  margin: auto 4vw;
+  text-align: justify;
+}
+
+p,
+figcaption {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-shadow: 0 2px 3px var(--bg-secondary);
+}
+
+a {
+  color: var(--text-color);
+}
+  a:active {
+    color: var(--text-hover);
+  }
+
+address {
+  font-style: normal;
+  display: inline;
+  overflow-wrap: break-word;
+}
+
+/* ===== End General Styles ===== */
+
+
+/* =============== 2. Navbar Styling =============== */
+
+.navbar {
+  position: fixed;
+  background-color: var(--bg-body-light);
+  top: 0;
+  width: 100vw;
+  height: 5rem;
+  z-index: 1000;
+
+  /* ------------------------------------------- */
+  /* opacity: 0; */
+  /* ------------------------------------------- */
+
+  transition: height 200ms ease;
+}
+
+.navbar-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: row;
+}
+  .nav-item {
+    width: 100%;
+  }
+  .nav-item-home {
+    
+  }
+  .nav-link {
+    padding: 1.5rem 0;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: height var(--transition-speed) ease; /* See "Hover Pseudo Classes" Section */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+    .link-text {
+      margin-top: 1.1rem;
+      display: none;
+      font-size: 1.5rem;
+      font-family: var(--font-main);
+    }
+    .nav-link svg {
+      width: 2.25rem;
+    }
+
+svg {
+  transition-duration: var(--transition-speed);
+}
+
+/* ===== End Navbar Styles ===== */
+
+
+/* =============== 2a. Navbar Hover Pseudo Classes, all screens =============== */
+
+.navbar:hover,
+.nav-item a:hover {
+  height: 8.1rem;
+}
+
+.nav-link:hover {
+  background-color: var(--bg-secondary);
+}
+
+.navbar:hover .link-text {
+  display: block;
+}
+
+.nav-link:hover .link-text,
+.nav-link:hover svg {
+  color: var(--text-hover);
+}
+
+/* ===== End Hover Pseudos ===== */
+
+
+/* ========== 3. Canvas Styles ========== */
+
+canvas {
+  background: white;
+}
+
+/* ===== End Canvas ===== */
+
+
+/* ========== 4. Hex Code Styles ========== */
+
+.header-hex {
+  width: 350px;
+  height: 350px;
+  background-color: var(--bg-secondary);
+  clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+}
+
+.hex {
+  background-color: var(--bg-secondary);
+  clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+}
+
+/* ===== End Hex Code Styles ===== */
+
+
+/* =============== 5. MediaElement Audio Player Styles =============== */
+
+.mejs__container {
+  clip-path: polygon(4.5% 0, 95.5% 0, 100% 33%, 100% 67%, 95.5% 100%, 4.5% 100%, 0 67%, 0 33%);
+}
+
+.mejs__controls:not([style*='display: none']) {
+  background: black;
+}
+
+.mejs__controls {
+color: rgb(245, 239, 226);
+}
+
+.mejs__time-total {
+  clip-path: polygon(3% 0, 97% 0, 100% 26%, 100% 74%, 97% 100%, 3% 100%, 0 74%, 0 26%);
+}
+
+.mejs__time-current,
+.mejs__time-handle-content {
+  background: rgb(245, 239, 226);
+}
+
+.mejs__time-hovered {
+  background: rgba(245, 239, 226, 0.5);
+  z-index: 10;
+}
+
+.mejs__time-handle,
+.mejs__time-handle-content {
+  background: #1a1a27;
+  width: 10px;
+  height: 10px;
+  clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+}
+
+.mejs__horizontal-volume-total {
+  clip-path: polygon(10% 0, 90% 0, 100% 50%, 100% 50%, 90% 100%, 10% 100%, 0 50%, 0 50%);
+}
+
+/* ===== End Audio Styles ===== */
+
+
+/* =============== 6. Media Queries (inc. Hover Pseudo Classes for speciic screen sizes) =============== */
+
+/* Small Screens */
+@media only screen and (max-width: 600px) {
+
+  /* .navbar {
+    top: 0;
+    width: 100vw;
+    height: 5rem;
+  } */
+    /* .navbar-nav {
+      flex-direction: row;
+    }
+      .nav-link {
+        justify-content: center;
+      } */
+
+  main {
+    margin-top: 5rem;
+    text-align: center;
+  }
+  .header-hex {
+    display: none;
+  }
+  h1 {
+    margin-top: 5rem;
+    margin-bottom: 0;
+    padding-top: 1.75rem;
+    text-align: center;
+  }
+}
+
+/* Large Screens */
+@media only screen and (min-width: 600px) {
+
+  p {
+    max-width: 70vw;
+    margin: auto;
+  }
+}
+
+/* ===== End Media Queries ===== */
