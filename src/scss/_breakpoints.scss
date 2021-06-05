@@ -1,8 +1,7 @@
 @use './abstracts/index' as *;
 
-// Small Screens 
+// Small Screens
 @media only screen and (max-width: 700px) {
-
   main {
     @include center-text;
     margin-top: 5rem;
@@ -12,15 +11,13 @@
     margin-bottom: 0;
     padding-top: 1.75rem;
   }
-
 }
 
 // Large Screens
 @media only screen and (min-width: 800px) {
-
   main {
     margin: 0 auto;
-    max-width: 50vw;
+    max-width: 45vw;
   }
 
   span {
@@ -30,9 +27,7 @@
   }
 
   .hexagons {
-
     li {
-
       &:nth-child(1) {
         visibility: hidden;
       }
@@ -96,7 +91,7 @@
       &:nth-child(13) {
         visibility: hidden;
       }
-      
+
       // Hexes that come in later, for a "second wave" of rain.
       &:nth-child(14) {
         @include standard-hex();
@@ -124,5 +119,4 @@
       }
     }
   }
-
 }

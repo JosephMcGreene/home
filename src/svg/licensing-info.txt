@@ -1,5 +1,7 @@
 All icons used in this website are derived from Font Awesome. I did not design or create any of them.
 
-I have adjusted their color and size from the originals.
+I have adjusted their color and size from the originals. I make no claims that the svg icons included in this project are mine or created by me. Furthermore, licensed trademark logos used here directly reflect the trademark owner's services, and each time one is used, I have provided a link to the website where the logo originates.
+
+I have also included the following site link wherever I have inserted an svg derived from Font Awesome, should there be any doubt to my motives or use of these icons:
 
 https://fontawesome.com/license
