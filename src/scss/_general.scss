@@ -4,7 +4,7 @@
   box-sizing: border-box;
 
   &:focus {
-    border: $text-hover 3px solid;
+    border: $text-hover 2px solid;
     border-radius: 7px;
   }
 }

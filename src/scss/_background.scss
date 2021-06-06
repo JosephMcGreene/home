@@ -15,7 +15,6 @@
     list-style: none;
     animation: animate 25s linear infinite;
     top: -15px;
-    opacity: .4;
 
     &:nth-child(1) {
       @include standard-hex();
