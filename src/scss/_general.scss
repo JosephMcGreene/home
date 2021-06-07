@@ -130,7 +130,7 @@ article {
 article,
 figure {
   @include font($main-font, 1rem, 600);
-  margin: 35px 2%;
+  margin: 35px 3.25%;
 }
 
 p,
@@ -149,20 +149,30 @@ p {
 
 .contact-links {
   @include flex(row);
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
   list-style-type: none;
+  padding: 0;
+  width: 100%;
 
   a {
     @include flex(row);
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     text-decoration: none;
-    margin: 0 30px 30px 0;
+    margin: 12px auto;
+
+    svg {
+      margin: 0 auto;
+    }
 
     span {
-      margin-left: 15px;
+      @include center-text();
+      width: 100%;
       font-size: 1.4rem;
+      margin-top: 8px;
     }
   }
 }
