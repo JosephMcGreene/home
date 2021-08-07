@@ -33,6 +33,10 @@ nav:hover {
 nav:hover span {
   display: block;
 }
+nav:hover img {
+  width: 8.1rem;
+  height: 8.1rem;
+}
 nav ul {
   display: flex;
   flex-direction: row;
@@ -47,6 +51,19 @@ nav ul li:first-child {
   display: none;
   margin-right: auto;
   color: #f5efe2;
+}
+nav ul li img {
+  margin-left: 20px;
+  width: 5rem;
+  height: 5rem;
+  transition: width 200ms ease;
+  transition: height 200ms ease;
+}
+nav ul li img ::before {
+  content: "J";
+}
+nav ul li img ::after {
+  content: "M";
 }
 nav ul li a {
   padding: 1.5rem 0;
@@ -469,6 +486,7 @@ nav ul li a:hover svg {
 
 body {
   background: #232332;
+  background-image: url("../svg/Hexes.jpg");
   margin: 0;
   padding: 0;
   width: 100%;
@@ -565,38 +583,6 @@ main {
   margin: 0 auto;
 }
 
-hr {
-  max-width: 30vw;
-  margin: 2rem auto;
-}
-
-article span {
-  font-size: 1.3rem;
-}
-
-article,
-figure {
-  font-family: "abelregular";
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 35px 3.25%;
-}
-
-p,
-figcaption {
-  font-size: 1.4rem;
-  line-height: 2rem;
-}
-
-p {
-  font-family: "abelregular";
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #f5efe2;
-  margin: 0 auto;
-  text-align: justify;
-}
-
 .contact-links {
   display: flex;
   flex-direction: row;
@@ -624,6 +610,44 @@ p {
   width: 100%;
   font-size: 1.4rem;
   margin-top: 8px;
+}
+
+hr {
+  max-width: 30vw;
+  margin: 2rem auto;
+}
+
+article span {
+  font-size: 1.3rem;
+}
+
+article,
+figure {
+  font-family: "abelregular";
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 35px 3.25%;
+}
+
+p,
+figcaption {
+  line-height: 1.8rem;
+}
+
+p {
+  font-family: "abelregular";
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #f5efe2;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.projects-article p {
+  max-width: 400px;
+  padding: 40px;
+  background: black;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
 }
 
 a {

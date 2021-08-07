@@ -1,5 +1,6 @@
 @use './abstracts/index' as *;
 
+// ==================== *, :root, and body ==================== //
 * {
   box-sizing: border-box;
 
@@ -15,6 +16,7 @@
 
 body {
   background: $light-bg;
+  background-image: url("../svg/Hexes.jpg");
   margin: 0;
   padding: 0;
   width: 100%;
@@ -31,6 +33,7 @@ body::-webkit-scrollbar-thumb {
   background: $secondary-bg;
 }
 
+// ==================== Header Styles ==================== //
 h1 {
   @include center-text;
   font-size: 2.75rem;
@@ -56,10 +59,12 @@ h3 {
   display: block;
 }
 
+// ==================== Main Styles ==================== //
 main {
   color: $text-color;
 }
 
+// ==================== quote, fig-container, & contact links Styles ==================== //
 .quote {
   @include font($main-font, 1.6rem, 400);
   color: $text-color;
@@ -116,37 +121,6 @@ main {
   }
 }
 
-hr {
-  max-width: 30vw;
-  margin: 2rem auto;
-}
-
-article {
-  span {
-    font-size: 1.3rem;
-  }
-}
-
-article,
-figure {
-  @include font($main-font, 1rem, 600);
-  margin: 35px 3.25%;
-}
-
-p,
-figcaption {
-  font-size: 1.4rem;
-  line-height: 2rem;
-}
-
-p {
-  @include font($main-font, 1.5rem, 600);
-  color: $text-color;
-
-  margin: 0 auto;
-  text-align: justify;
-}
-
 .contact-links {
   @include flex(row);
   justify-content: space-evenly;
@@ -174,6 +148,65 @@ p {
       font-size: 1.4rem;
       margin-top: 8px;
     }
+  }
+}
+
+// ==================== Misc Styles ==================== //
+hr {
+  max-width: 30vw;
+  margin: 2rem auto;
+}
+
+article {
+  span {
+    font-size: 1.3rem;
+  }
+}
+
+article,
+figure {
+  @include font($main-font, 1rem, 600);
+  margin: 35px 3.25%;
+}
+
+p,
+figcaption {
+  line-height: 1.8rem;
+}
+
+p {
+  @include font($main-font, 1.25rem, 600);
+  color: $text-color;
+
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.projects-article {
+  // &:nth-child(odd) {
+  //   display: inline-block;
+  //   margin-right: auto;
+  // }
+
+  // &:nth-child(even) {
+  //   display: inline-block;
+  //   margin-left: auto;
+  // }
+
+  p {
+    max-width: 400px;
+    padding: 40px;
+    background: black;
+    clip-path: polygon(
+      25% 0%,
+      75% 0%,
+      100% 25%,
+      100% 75%,
+      75% 100%,
+      25% 100%,
+      0% 75%,
+      0% 25%
+    );
   }
 }
 
