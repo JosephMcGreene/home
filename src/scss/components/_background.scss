@@ -1,4 +1,9 @@
-@use './abstracts/index' as *;
+@use '../abstracts/index' as *;
+
+body {
+  background: $light-bg;
+  background-image: url("../svg/Hexes.jpg");
+}
 
 .hexagons {
   position: fixed;

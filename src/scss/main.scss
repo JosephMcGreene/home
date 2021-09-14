@@ -1,5 +1,5 @@
-@use 'navbar';
-@use 'mediaelement';
-@use 'breakpoints';
-@use 'general';
-@use 'background';
+// @use './components/background';
+@use './components/breakpoints';
+@use './components/misc';
+@use './components/mediaelement';
+@use './components/navbar';

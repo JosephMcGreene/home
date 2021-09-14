@@ -1,7 +1,9 @@
-@use './abstracts/index' as *;
+@use '../abstracts/index' as *;
 
 // ==================== *, :root, and body ==================== //
-* {
+*,
+::before,
+::after {
   box-sizing: border-box;
 
   &:focus {
@@ -15,8 +17,6 @@
 }
 
 body {
-  background: $light-bg;
-  background-image: url("../svg/Hexes.jpg");
   margin: 0;
   padding: 0;
   width: 100%;
@@ -36,7 +36,7 @@ body::-webkit-scrollbar-thumb {
 // ==================== Header Styles ==================== //
 h1 {
   @include center-text;
-  font-size: 2.75rem;
+  font-size: $base-font-size;
   color: $text-color;
   margin-top: 7rem;
   margin-bottom: 7rem;
