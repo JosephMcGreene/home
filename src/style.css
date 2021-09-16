@@ -10,11 +10,10 @@
   6. Media Queries (inc. Hover Pseudo Classes for speciic screen sizes)
 */
 
-
 /* =============== 1. :root, Variable Declarations, General Styles =============== */
 
 /* https://www.fontsquirrel.com/fonts/Juice?filter%5Bclassifications%5D%5B0%5D=display&filter%5Bdownload%5D=local&filter%5Blicense%5D%5B0%5D=web&filter%5Btags%5D%5B0%5D=contemporary */
-@font-face {
+/* @font-face {
   font-family: 'juice_regularregular';
   src: url('./fonts/JUICE_Regular-webfont.woff') format('woff');
   font-weight: normal;
@@ -33,13 +32,12 @@
   font-style: normal;
 }
 
-/* https://www.fontsquirrel.com/fonts/abel?q%5Bterm%5D=abel&q%5Bsearch_check%5D=Y */
 @font-face {
   font-family: 'abelregular';
   src: url('./fonts/abel-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -52,10 +50,10 @@
   --text-hover: aqua;
   --bg-primary: #1a1a27; /* originally: #23232e */
   --bg-secondary: black; /* originally: #141418 */
-  --bg-body-light: rgb(35,35,45);
+  --bg-body-light: rgb(35, 35, 45);
   --transition-speed: 400ms;
-  --font-main: 'juice_boldbold';
-  --font-secondary: 'abelregular';
+  --font-main: "juice_boldbold";
+  --font-secondary: "abelregular";
 }
 
 body {
@@ -65,15 +63,15 @@ body {
   min-height: 100vh;
   font-family: var(--font-main);
 }
-  body::-webkit-scrollbar {
-    width: 1rem;
-  }
-  body::-webkit-scrollbar-track {
-    background: var(--bg-body-light);
-  }
-  body::-webkit-scrollbar-thumb {
-    background: var(--bg-secondary);
-  }
+body::-webkit-scrollbar {
+  width: 1rem;
+}
+body::-webkit-scrollbar-track {
+  background: var(--bg-body-light);
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--bg-secondary);
+}
 
 header {
   /* margin-top: 7rem; */
@@ -119,22 +117,31 @@ figure {
   z-index: 0;
   display: inline-block;
   max-width: 475px;
-  background-color: rgba(0,0,0,0.25);
+  background-color: rgba(0, 0, 0, 0.25);
   margin: 10px auto;
   padding: 25px;
-  clip-path: polygon(10% 0, 90% 0, 100% 25%, 100% 75%, 90% 100%, 10% 100%, 0 75%, 0 25%);
+  clip-path: polygon(
+    10% 0,
+    90% 0,
+    100% 25%,
+    100% 75%,
+    90% 100%,
+    10% 100%,
+    0 75%,
+    0 25%
+  );
 }
-  figcaption {
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 10px;
-    display: block;
-    text-align: center;
-  }
-  figure audio {
-    display: block;
-    margin: 0 auto;
-  }
+figcaption {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  display: block;
+  text-align: center;
+}
+figure audio {
+  display: block;
+  margin: 0 auto;
+}
 
 article,
 figure {
@@ -158,9 +165,9 @@ figcaption {
 a {
   color: var(--text-color);
 }
-  a:active {
-    color: var(--text-hover);
-  }
+a:active {
+  color: var(--text-hover);
+}
 
 address {
   font-style: normal;
@@ -169,7 +176,6 @@ address {
 }
 
 /* ===== End General Styles ===== */
-
 
 /* =============== 2. Navbar Styling =============== */
 
@@ -196,38 +202,36 @@ address {
   display: flex;
   flex-direction: row;
 }
-  .nav-item {
-    width: 100%;
-  }
-  .nav-item-home {
-    
-  }
-  .nav-link {
-    padding: 1.5rem 0;
-    color: var(--text-color);
-    text-decoration: none;
-    transition: height var(--transition-speed) ease; /* See "Hover Pseudo Classes" Section */
+.nav-item {
+  width: 100%;
+}
+.nav-item-home {
+}
+.nav-link {
+  padding: 1.5rem 0;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: height var(--transition-speed) ease; /* See "Hover Pseudo Classes" Section */
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-    .link-text {
-      margin-top: 1.1rem;
-      display: none;
-      font-size: 1.5rem;
-      font-family: var(--font-main);
-    }
-    .nav-link svg {
-      width: 2.25rem;
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.link-text {
+  margin-top: 1.1rem;
+  display: none;
+  font-size: 1.5rem;
+  font-family: var(--font-main);
+}
+.nav-link svg {
+  width: 2.25rem;
+}
 
 svg {
   transition-duration: var(--transition-speed);
 }
 
 /* ===== End Navbar Styles ===== */
-
 
 /* =============== 2a. Navbar Hover Pseudo Classes, all screens =============== */
 
@@ -251,7 +255,6 @@ svg {
 
 /* ===== End Hover Pseudos ===== */
 
-
 /* ========== 3. Canvas Styles ========== */
 
 canvas {
@@ -259,7 +262,6 @@ canvas {
 }
 
 /* ===== End Canvas ===== */
-
 
 /* ========== 4. Hex Code Styles ========== */
 
@@ -277,23 +279,40 @@ canvas {
 
 /* ===== End Hex Code Styles ===== */
 
-
 /* =============== 5. MediaElement Audio Player Styles =============== */
 
 .mejs__container {
-  clip-path: polygon(4.5% 0, 95.5% 0, 100% 33%, 100% 67%, 95.5% 100%, 4.5% 100%, 0 67%, 0 33%);
+  clip-path: polygon(
+    4.5% 0,
+    95.5% 0,
+    100% 33%,
+    100% 67%,
+    95.5% 100%,
+    4.5% 100%,
+    0 67%,
+    0 33%
+  );
 }
 
-.mejs__controls:not([style*='display: none']) {
+.mejs__controls:not([style*="display: none"]) {
   background: black;
 }
 
 .mejs__controls {
-color: rgb(245, 239, 226);
+  color: rgb(245, 239, 226);
 }
 
 .mejs__time-total {
-  clip-path: polygon(3% 0, 97% 0, 100% 26%, 100% 74%, 97% 100%, 3% 100%, 0 74%, 0 26%);
+  clip-path: polygon(
+    3% 0,
+    97% 0,
+    100% 26%,
+    100% 74%,
+    97% 100%,
+    3% 100%,
+    0 74%,
+    0 26%
+  );
 }
 
 .mejs__time-current,
@@ -315,23 +334,30 @@ color: rgb(245, 239, 226);
 }
 
 .mejs__horizontal-volume-total {
-  clip-path: polygon(10% 0, 90% 0, 100% 50%, 100% 50%, 90% 100%, 10% 100%, 0 50%, 0 50%);
+  clip-path: polygon(
+    10% 0,
+    90% 0,
+    100% 50%,
+    100% 50%,
+    90% 100%,
+    10% 100%,
+    0 50%,
+    0 50%
+  );
 }
 
 /* ===== End Audio Styles ===== */
-
 
 /* =============== 6. Media Queries (inc. Hover Pseudo Classes for speciic screen sizes) =============== */
 
 /* Small Screens */
 @media only screen and (max-width: 600px) {
-
   /* .navbar {
     top: 0;
     width: 100vw;
     height: 5rem;
   } */
-    /* .navbar-nav {
+  /* .navbar-nav {
       flex-direction: row;
     }
       .nav-link {
@@ -355,7 +381,6 @@ color: rgb(245, 239, 226);
 
 /* Large Screens */
 @media only screen and (min-width: 600px) {
-
   p {
     max-width: 70vw;
     margin: auto;
