@@ -15,14 +15,13 @@
 }
 
 body {
-  background: $light-bg;
-  background-image: url("../svg/Hexes.jpg");
   margin: 0;
   padding: 0;
   width: 100%;
   min-height: 100vh;
-  font-family: $header-font;
+  font-family: "Verdana";
 }
+// $header-font
 body::-webkit-scrollbar {
   width: 1rem;
 }
@@ -66,7 +65,8 @@ main {
 
 // ==================== quote, fig-container, & contact links Styles ==================== //
 .quote {
-  @include font($main-font, 1.6rem, 400);
+  @include font("Verdana", 1.6rem, 400);
+  // $main-font
   color: $text-color;
   @include center-text;
 
@@ -75,7 +75,8 @@ main {
   line-height: 2.5rem;
 
   blockquote {
-    @include font($italic-header, 1.7rem, 600);
+    @include font("Verdana", 1.7rem, 600);
+    // $italic-header
     color: $text-color;
 
     margin: 0 15px;
@@ -106,7 +107,8 @@ main {
     );
 
     figcaption {
-      @include font($header-font, 1.3rem, 400);
+      @include font("Verdana", 1.3rem, 400);
+      // $header-font
       @include center-text;
       padding-left: 40px;
       padding-right: 40px;
@@ -165,7 +167,8 @@ article {
 
 article,
 figure {
-  @include font($main-font, 1rem, 600);
+  @include font("Verdana", 1rem, 600);
+  // $main-font
   margin: 35px 3.25%;
 }
 
@@ -175,7 +178,8 @@ figcaption {
 }
 
 p {
-  @include font($main-font, 1.25rem, 600);
+  @include font("Verdana", 1.25rem, 600);
+  // $main-font
   color: $text-color;
 
   margin: 0 auto;

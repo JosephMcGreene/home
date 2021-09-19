@@ -1,5 +1,9 @@
 @use './abstracts/index' as *;
 
+body {
+  background: $light-bg;
+}
+
 .hexagons {
   position: fixed;
   top: 0;
