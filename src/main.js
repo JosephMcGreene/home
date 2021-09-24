@@ -5,7 +5,7 @@ import {
   pianoConcerto4,
   stringQuintet1,
   stringQuintet2,
-} from "./js/audio";
+} from "./audio";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
