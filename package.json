@@ -1,0 +1,27 @@
+{
+  "name": "joseph-mcgreene-home",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JosephMcGreene/JosephMcGreene.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JosephMcGreene/JosephMcGreene/issues"
+  },
+  "homepage": "https://github.com/JosephMcGreene/JosephMcGreene#readme",
+  "devDependencies": {
+    "sass": "^1.42.1",
+    "vite": "^2.5.4"
+  },
+  "dependencies": {
+    "three": "^0.132.2"
+  }
+}

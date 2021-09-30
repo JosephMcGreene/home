@@ -1,0 +1,249 @@
+@use "../abstracts/index" as *;
+
+// ==================== *, :root, and body ==================== //
+*,
+::before,
+::after {
+  box-sizing: border-box;
+
+  &:focus {
+    border: $text-hover 1px solid;
+    border-radius: 4px;
+  }
+}
+
+:root {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  font-family: $header-font;
+}
+body::-webkit-scrollbar {
+  width: 1rem;
+}
+body::-webkit-scrollbar-track {
+  background: $light-bg;
+}
+body::-webkit-scrollbar-thumb {
+  background: $secondary-bg;
+}
+
+// ==================== Header Styles ==================== //
+h1 {
+  @include center-text;
+  font-size: $base-font-size;
+  color: $text-color;
+  margin-top: 7rem;
+  margin-bottom: 7rem;
+  overflow-wrap: break-word;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 5rem;
+}
+
+h2,
+h3 {
+  @include center-text;
+  color: $text-color;
+  display: block;
+}
+
+// ==================== Main Styles ==================== //
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+main {
+  width: 100vw;
+  z-index: 100;
+  color: $text-color;
+  position: absolute;
+  width: 100%;
+  margin: 0 auto;
+
+  opacity: 0.1;
+
+  // display: grid;
+  // grid-template-columns: repeat(12, 1fr);
+}
+
+// ==================== quote, fig-container, & contact links Styles ==================== //
+.quote {
+  @include font($main-font, 1.6rem, 400);
+  color: $text-color;
+  @include center-text;
+
+  display: block;
+  margin: 0 auto 6rem auto;
+  line-height: 2.5rem;
+
+  blockquote {
+    @include font($italic-header, 1.7rem, 600);
+    color: $text-color;
+
+    margin: 0 15px;
+  }
+}
+
+.fig-container {
+  @include flex(row);
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  figure {
+    z-index: 0;
+    display: inline-block;
+    max-width: 475px;
+    background-color: rgba(0, 0, 0, 0.25);
+    margin: 10px auto;
+    padding: 25px;
+    clip-path: polygon(
+      10% 0,
+      90% 0,
+      100% 25%,
+      100% 75%,
+      90% 100%,
+      10% 100%,
+      0 75%,
+      0 25%
+    );
+
+    figcaption {
+      @include font($header-font, 1.3rem, 400);
+      @include center-text;
+      padding-left: 40px;
+      padding-right: 40px;
+      padding-bottom: 10px;
+      display: block;
+    }
+
+    audio {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+.contact-links {
+  @include flex(row);
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+
+  a {
+    @include flex(row);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-decoration: none;
+    margin: 12px auto;
+
+    svg {
+      margin: 0 auto;
+    }
+
+    span {
+      @include center-text();
+      width: 100%;
+      font-size: 1.4rem;
+      margin-top: 8px;
+    }
+  }
+}
+
+// ==================== Misc Styles ==================== //
+hr {
+  max-width: 30vw;
+  margin: 2rem auto;
+}
+
+article {
+  span {
+    font-size: 1.3rem;
+  }
+}
+
+article,
+figure {
+  @include font($main-font, 1rem, 600);
+  margin: 35px 3.25%;
+}
+
+p,
+figcaption {
+  line-height: 1.8rem;
+}
+
+p {
+  @include font($main-font, 1.25rem, 600);
+  color: $text-color;
+
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.projects-article {
+  // &:nth-child(odd) {
+  //   display: inline-block;
+  //   margin-right: auto;
+  // }
+
+  // &:nth-child(even) {
+  //   display: inline-block;
+  //   margin-left: auto;
+  // }
+
+  p {
+    max-width: 400px;
+    padding: 40px;
+    background: black;
+    clip-path: polygon(
+      25% 0%,
+      75% 0%,
+      100% 25%,
+      100% 75%,
+      75% 100%,
+      25% 100%,
+      0% 75%,
+      0% 25%
+    );
+  }
+}
+
+a {
+  color: $text-color;
+
+  &:hover,
+  &:active {
+    transition: color $transition-speed;
+    color: $text-hover;
+  }
+}
+
+address {
+  font-style: normal;
+  display: inline;
+  overflow-wrap: break-word;
+}
+
+.hex {
+  background-color: $secondary-bg;
+  clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+}
