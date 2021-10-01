@@ -26,7 +26,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(10);
+// camera.position.setZ(4);
 
 renderer.render(scene, camera);
 // /Set up Scene, Camera, and Renderer ==========
@@ -44,7 +44,7 @@ const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(pointLight1, pointLight2, pointLight3, ambientLight);
 // /Lighting ==========
 
-// // Helpers
+// Helpers
 // const lightHelper1 = new THREE.PointLightHelper(pointLight1);
 // const lightHelper2 = new THREE.PointLightHelper(pointLight2);
 // const lightHelper3 = new THREE.PointLightHelper(pointLight3);
@@ -64,9 +64,9 @@ const torus = new THREE.Mesh(
     reflectivity: 1,
   })
 );
-scene.add(torus);
 torus.position.x = -2;
-torus.position.z = -2.5;
+torus.position.z = -3;
+scene.add(torus);
 // /Hexagon Torus ==========
 
 // Earth ==========
@@ -75,9 +75,9 @@ const earthSphere = new THREE.Mesh(
   new THREE.SphereGeometry(0.4, 32, 32),
   new THREE.MeshStandardMaterial({ map: earthTexture })
 );
-scene.add(earthSphere);
 earthSphere.position.x = -2;
-earthSphere.position.z = -2.5;
+earthSphere.position.z = -3;
+scene.add(earthSphere);
 // /Earth ==========
 
 // =============== /3D Objects ===============
@@ -132,8 +132,5 @@ function handleOnScroll() {
   camera.position.z = t * -0.02;
   camera.rotation.x = t * 0.00055;
   camera.rotation.y = t * -0.0002;
-  // camera.position.setX(t * -0.002);
-  // camera.position.setY(t * -0.002);
-  // camera.position.setZ(t * -0.01);
 }
 document.body.onscroll = handleOnScroll;
