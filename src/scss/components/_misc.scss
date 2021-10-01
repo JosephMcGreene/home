@@ -94,7 +94,7 @@ main {
   margin: 0 auto 6rem auto;
   line-height: 2.5rem;
 
-  blockquote {
+  .blockquote {
     @include font($italic-header, 1.7rem, 600);
     color: $text-color;
 

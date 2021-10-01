@@ -1,4 +1,4 @@
-@use '../abstracts/index' as *;
+@use "../abstracts/index" as *;
 
 // Small Screens
 @media only screen and (max-width: 700px) {
@@ -20,7 +20,7 @@
     max-width: 45vw;
   }
 
-  span {
+  .quote {
     max-width: 35vw;
     display: block;
     margin: 0 auto;
