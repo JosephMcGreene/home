@@ -3,6 +3,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import earthImg from "./img/earth.jpg";
 import cloudsImg from "./img/dark-clouds-bg.jpg";
+import logo from "./img/McGreene_Bee_Dark_BG.png";
 
 // Set up Scene, Camera, and Renderer ==========
 const scene = new THREE.Scene();
@@ -53,6 +54,17 @@ scene.add(pointLight1, pointLight2, pointLight3, ambientLight);
 
 // =============== 3D Objects ===============
 
+// Logo Cube ==========
+const logoTexture = new THREE.TextureLoader().load(logo);
+const logoCube = new THREE.Mesh(
+  new THREE.BoxGeometry(1, 1, 1),
+  new THREE.MeshBasicMaterial({ map: logoTexture })
+);
+logoCube.position.y = 0.22;
+logoCube.position.z = -3;
+scene.add(logoCube);
+// /Logo Cube ==========
+
 // Hexagon Torus ==========
 const torus = new THREE.Mesh(
   new THREE.TorusGeometry(1.2, 0.3, 6, 6, Math.PI * 2),
@@ -66,7 +78,7 @@ const torus = new THREE.Mesh(
 );
 torus.position.x = -2;
 torus.position.z = -3;
-scene.add(torus);
+// scene.add(torus);
 // /Hexagon Torus ==========
 
 // Earth ==========
@@ -77,7 +89,7 @@ const earthSphere = new THREE.Mesh(
 );
 earthSphere.position.x = -2;
 earthSphere.position.z = -3;
-scene.add(earthSphere);
+// scene.add(earthSphere);
 // /Earth ==========
 
 // =============== /3D Objects ===============
@@ -114,6 +126,9 @@ function animateObjects() {
   torus.rotation.x += 0.01;
   torus.rotation.y += 0.01;
   torus.rotation.z += 0.007;
+
+  logoCube.rotation.y += 0.0075;
+  logoCube.rotation.z += 0.0075;
 
   earthSphere.rotation.y += 0.01;
 

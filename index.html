@@ -6,7 +6,7 @@
     <script type="module" src="./src/index.js"></script>
     <title>Joseph McGreene HQ</title>
   </head>
-  <body>
+  <body id="top">
     <canvas id="bg"></canvas>
 
     <nav class="nav">
@@ -19,7 +19,7 @@
           />
         </li>
         <li class="nav-li">
-          <a href="index.html" class="nav-link">
+          <a href="#top" class="nav-link">
             <svg
               aria-hidden="true"
               focusable="false"
@@ -37,11 +37,11 @@
             </svg>
             <!-- https://fontawesome.com/license -->
 
-            <span class="nav-span">Home</span>
+            <span class="nav-span">Go to Top</span>
           </a>
         </li>
         <li class="nav-li">
-          <a href="projects.html" class="nav-link">
+          <a href="#projectsSection" class="nav-link">
             <svg
               aria-hidden="true"
               focusable="false"
@@ -63,7 +63,7 @@
           </a>
         </li>
         <li class="nav-li">
-          <a href="#" class="nav-link">
+          <a href="#aboutSection" class="nav-link">
             <svg
               aria-hidden="true"
               focusable="false"
@@ -85,7 +85,7 @@
           </a>
         </li>
         <li class="nav-li">
-          <a href="contact.html" class="nav-link">
+          <a href="#contactSection" class="nav-link">
             <svg
               aria-hidden="true"
               focusable="false"
@@ -114,7 +114,81 @@
         <h1>Joseph McGreene</h1>
       </header>
 
-      <section>
+      <section id="projectsSection">
+        <h2>Projects</h2>
+
+        <h2>Programming</h2>
+
+        <article class="projects-article">
+          <p class="projects-p">
+            Thanks for taking an interest in the projects I'm hard at work on.
+            If you are interested in seeing more or have any questions, feel
+            free to
+            <a href="contact.html">get in touch with me.</a>
+          </p>
+          <br />
+          <p class="projects-p">
+            The first project of note is of course this very website, which was
+            originally a means to showcase my skills. Since then it has grown
+            into a passion project that I take great pride in.
+          </p>
+        </article>
+
+        <h3>
+          <a
+            href="https://josephmcgreene.github.io/chord-suggestions/"
+            target="_blank"
+            >Chord Suggestions</a
+          >
+        </h3>
+
+        <article>
+          <p>
+            After a few months of learning JavaScript, I decided I wanted to
+            strike out on my own an build my own app from scratch. My
+            educational background is in music, so I decided to create an app
+            that would help songwriters to come up with chord progressions for
+            their music.
+            <a
+              href="https://josephmcgreene.github.io/chord-suggestions/"
+              target="_blank"
+              ><em>Chord Suggestions</em></a
+            >
+            was born. So far, I am quite proud of it. The most difficult aspect
+            was figuring out how to use JavaScript to establish the key of a
+            piece of music that the user inputs. Once that code was written, I
+            realized that the rest of the programming would primarily entail
+            creating an intuitive UI for the generation of the chord suggestions
+            themselves. "Ah-ha!" I thought to myself. "This is a wonderful
+            opportunity for me to learn React!" I am in the midst of that
+            endeavor likely as you read this, and Chord Suggestions will become
+            a React app once I am confident in my understanding of the
+            framework/library.
+          </p>
+        </article>
+
+        <h3>
+          <a href="https://josephmcgreene.github.io/lets-roll/" target="_blank"
+            >Let's Roll</a
+          >
+        </h3>
+
+        <article>
+          <p>
+            <a
+              href="https://josephmcgreene.github.io/lets-roll/"
+              target="_blank"
+              ><em>Let's Roll</em></a
+            >
+            came about after I joined my first ever Dungeons and Dragons group.
+            I knew there are dozens of completely adequate dice rolling apps out
+            there, but I wanted to create my own, mostly to prove to myself that
+            I can do it.
+          </p>
+        </article>
+      </section>
+
+      <section id="aboutSection">
         <span class="quote">
           <blockquote>
             "Computers are good at following instructions, but not at reading
@@ -191,80 +265,7 @@
         <span>- Joseph McGreene</span>
       </section>
 
-      <section>
-        <h2>Projects</h2>
-
-        <h2>Programming</h2>
-
-        <article class="projects-article">
-          <p class="projects-p">
-            Thanks for taking an interest in the projects I'm hard at work on.
-            If you are interested in seeing more or have any questions, feel
-            free to
-            <a href="contact.html">get in touch with me.</a>
-          </p>
-          <br />
-          <p class="projects-p">
-            The first project of note is of course this very website, which was
-            originally a means to showcase my skills. Since then it has grown
-            into a passion project that I take great pride in.
-          </p>
-        </article>
-
-        <h3>
-          <a
-            href="https://josephmcgreene.github.io/chord-suggestions/"
-            target="_blank"
-            >Chord Suggestions</a
-          >
-        </h3>
-
-        <article>
-          <p>
-            After a few months of learning JavaScript, I decided I wanted to
-            strike out on my own an build my own app from scratch. My
-            educational background is in music, so I decided to create an app
-            that would help songwriters to come up with chord progressions for
-            their music.
-            <a
-              href="https://josephmcgreene.github.io/chord-suggestions/"
-              target="_blank"
-              ><em>Chord Suggestions</em></a
-            >
-            was born. So far, I am quite proud of it. The most difficult aspect
-            was figuring out how to use JavaScript to establish the key of a
-            piece of music that the user inputs. Once that code was written, I
-            realized that the rest of the programming would primarily entail
-            creating an intuitive UI for the generation of the chord suggestions
-            themselves. "Ah-ha!" I thought to myself. "This is a wonderful
-            opportunity for me to learn React!" I am in the midst of that
-            endeavor likely as you read this, and Chord Suggestions will become
-            a React app once I am confident in my understanding of the
-            framework/library.
-          </p>
-        </article>
-
-        <h3>
-          <a href="https://josephmcgreene.github.io/lets-roll/" target="_blank"
-            >Let's Roll</a
-          >
-        </h3>
-
-        <article>
-          <p>
-            <a
-              href="https://josephmcgreene.github.io/lets-roll/"
-              target="_blank"
-              ><em>Let's Roll</em></a
-            >
-            came about after I joined my first ever Dungeons and Dragons group.
-            I knew there are dozens of completely adequate dice rolling apps out
-            there, but I wanted to create my own, mostly to prove to myself that
-            I can do it.
-          </p>
-        </article>
-      </section>
-      <section>
+      <section id="contactSection">
         <h1>Get in Touch</h1>
 
         <address>

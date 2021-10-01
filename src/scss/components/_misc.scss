@@ -5,11 +5,16 @@
 ::before,
 ::after {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 
   &:focus {
     border: $text-hover 1px solid;
     border-radius: 4px;
   }
+}
+*::selection {
+  background-color: $text-hover;
+  color: $primary-bg;
 }
 
 :root {
@@ -39,7 +44,7 @@ h1 {
   font-size: $base-font-size;
   color: $text-color;
   margin-top: 7rem;
-  margin-bottom: 7rem;
+  margin-bottom: 11.75rem;
   overflow-wrap: break-word;
 }
 
@@ -64,7 +69,7 @@ canvas {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: -100;
 }
 
 main {
@@ -74,8 +79,6 @@ main {
   position: absolute;
   width: 100%;
   margin: 0 auto;
-
-  opacity: 0.1;
 
   // display: grid;
   // grid-template-columns: repeat(12, 1fr);
@@ -225,6 +228,13 @@ p {
       0% 25%
     );
   }
+}
+
+.logo {
+  width: 80px;
+  z-index: 100;
+  opacity: 1;
+  display: block;
 }
 
 a {
