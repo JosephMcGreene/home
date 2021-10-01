@@ -14,6 +14,7 @@ nav {
     height: 7rem;
 
     span {
+      @include text-glow($text-hover);
       // display none when not hovered
       display: block;
     }
@@ -32,20 +33,19 @@ nav {
     padding: 0;
 
     li {
-      width: 25%;
+      width: 11.5%;
 
       &:first-child {
-        display: none;
         margin-right: auto;
         color: $text-color;
       }
 
       img {
         margin-left: 20px;
-        width: 5rem;
-        height: 5rem;
-        transition: width 200ms ease;
+        width: 4rem;
+        height: 4rem;
         transition: height 200ms ease;
+        transition: width 200ms ease;
       }
 
       a {

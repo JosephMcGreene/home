@@ -41,9 +41,9 @@ body::-webkit-scrollbar-thumb {
 // ==================== Header Styles ==================== //
 h1 {
   @include center-text;
+  @include text-glow($text-color);
   font-size: $base-font-size;
   color: $text-color;
-  margin-top: 7rem;
   margin-bottom: 11.75rem;
   overflow-wrap: break-word;
 }
@@ -72,16 +72,14 @@ canvas {
   z-index: -100;
 }
 
-main {
+.main-content {
   width: 100vw;
   z-index: 100;
   color: $text-color;
   position: absolute;
   width: 100%;
   margin: 0 auto;
-
-  // display: grid;
-  // grid-template-columns: repeat(12, 1fr);
+  padding-top: 4.5rem;
 }
 
 // ==================== quote, fig-container, & contact links Styles ==================== //
@@ -89,16 +87,15 @@ main {
   @include font($main-font, 1.6rem, 400);
   color: $text-color;
   @include center-text;
+  @include text-glow($text-color);
 
-  display: block;
-  margin: 0 auto 6rem auto;
   line-height: 2.5rem;
 
   .blockquote {
     @include font($italic-header, 1.7rem, 600);
     color: $text-color;
-
-    margin: 0 15px;
+    display: inline;
+    margin: 0;
   }
 }
 

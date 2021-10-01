@@ -1,7 +1,11 @@
-@use 'variables' as var;
+@use "variables" as var;
 
 @mixin center-text {
   text-align: center;
+}
+
+@mixin text-glow($color) {
+  text-shadow: 0 0 4px $color;
 }
 
 @mixin flex($direction) {

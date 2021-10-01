@@ -1,0 +1,32 @@
+@use "../abstracts/index" as *;
+
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, fit-content);
+
+  header {
+    grid-row: 1 / 2;
+    grid-column: 5 / 9;
+  }
+
+  .quote {
+    grid-row: 2 / 3;
+    grid-column: 5 / 9;
+  }
+
+  .about-section {
+    grid-row: 3 / 4;
+    grid-column: 3 / 11;
+  }
+
+  .projects-section {
+    grid-row: 4 / 5;
+    grid-column: 3 / 11;
+  }
+
+  .contact-section {
+    grid-row: 5 / 6;
+    grid-column: 3 / 11;
+  }
+}
